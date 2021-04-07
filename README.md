@@ -1,31 +1,20 @@
-# Adonis fullstack application
+# AdonisJs Docker Image
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+Build docker image for AdonisJs application.
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+## Build Image
+To build image run this command (__change the tag name & version with your preferred tag name & version__).
 
-## Setup
+`$ docker build . -t myorganization/myimage:1.0.0`
 
-Use the adonis command to install the blueprint
+## Running Container from Image
 
-```bash
-adonis new yardstick
-```
+To create a container from the image, run this command (__change the tag name & version with your preferred tag name & version__).
 
-or manually clone the repo and then run `npm install`.
+`$ docker run -d -p 3333:3333 --name adonis-app myorganization/myimage:1.0.0`
 
+Then you can access the app from the browser with this url: `http://127.0.0.1:3333`
 
-### Migrations
+## Dockerhub image
 
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
+This repository is proven by running build in Dockerhub, you can see the result [here](https://hub.docker.com/r/namikazebadri/adonis-app).
